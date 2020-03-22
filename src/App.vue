@@ -1,24 +1,26 @@
-<template>
-  <div id="app">
-    <meu-componente />
-  </div>
-</template>
-
 <script>
-import MeuComponente from "./components/MeuComponente.vue";
+import Container from "@/layout/Container";
+import Users from "@/components/Users";
+import Products from "@/components/Products";
 
 export default {
-  name: "App",
   components: {
-    MeuComponente
+    Container,
+    Users,
+    Products
   }
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
+<template>
+  <container>
+    <div class="flex flex-row">
+      <div class="flex-1">
+        <Users />
+      </div>
+      <div class="flex-1">
+        <Products />
+      </div>
+    </div>
+  </container>
+</template>
