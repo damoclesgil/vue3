@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MeuComponente />
+    <meu-componente />
   </div>
 </template>
 
