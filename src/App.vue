@@ -1,26 +1,17 @@
 <script>
 import Container from "@/layout/Container";
-import Users from "@/components/Users";
-import Products from "@/components/Products";
+import Vuelidate from "@/components/Vuelidate";
 
 export default {
   components: {
     Container,
-    Users,
-    Products
+    Vuelidate
   }
 };
 </script>
 
 <template>
   <container>
-    <div class="flex flex-row">
-      <div class="flex-1">
-        <Users />
-      </div>
-      <div class="flex-1">
-        <Products />
-      </div>
-    </div>
+    <Vuelidate />
   </container>
 </template>

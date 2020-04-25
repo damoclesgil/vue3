@@ -3,23 +3,25 @@ import { useHttpGet } from "@/use/useHttpGet";
 
 export default {
   setup() {
-    const { loading, error, data } = useHttpGet("/api/users");
+    const {
+      loading: loadingUsers,
+      error: errorUsers,
+      data: dataUsers
+    } = useHttpGet("/api/users");
 
-    return { loading, error, data };
+    return { loadingUsers, errorUsers, dataUsers };
   }
 };
 </script>
 
 <template>
-  <div>
-    <h4 v-if="loading">Carregando...</h4>
-    <div v-if="error" style="color: #c00000;">
-      <strong>{{ error }}</strong>
-    </div>
-    <ul v-else>
-      <li v-for="user in data.users" :key="user.id">
-        {{ user.name }} ({{ user.mobile }})
-      </li>
-    </ul>
+  <h4 v-if="loadingUsers">Carregando...</h4>
+  <div v-else-if="errorUsers" class="text-red-800">
+    <strong>{{ errorUsers }}</strong>
   </div>
+  <ul v-else>
+    <li v-for="user in dataUsers.users" :key="user.id">
+      {{ user.name }} ({{ user.mobile }})
+    </li>
+  </ul>
 </template>
