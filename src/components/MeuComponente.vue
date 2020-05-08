@@ -1,12 +1,15 @@
 <template>
   <container>
     {{ users }}
+    <button @click="onClick">Click</button>
+    {{ isClicked }}
   </container>
 </template>
 
 <script>
 import Container from "../layout/Container";
 import { useUsers } from "@/use/useUsers.js";
+import { ref } from 'vue';
 export default {
   name: "Componente",
   components: {
@@ -14,8 +17,13 @@ export default {
   },
   setup() {
     const { users } = useUsers();
+     const isClicked = ref(false)
 
-    return { users };
+    const onClick = () => {
+      isClicked.value = !isClicked.value
+    }
+
+    return { users, onClick, isClicked };
   }
 };
 </script>
