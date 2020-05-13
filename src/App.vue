@@ -1,26 +1,17 @@
 <script>
 import Container from "@/layout/Container";
-import Users from "@/components/Users";
-import Products from "@/components/Products";
+import MeuComponente from "@/components/MeuComponente";
 
 export default {
   components: {
     Container,
-    Users,
-    Products
+    MeuComponente,
   }
 };
 </script>
 
 <template>
   <container>
-    <div class="flex flex-row">
-      <div class="flex-1">
-        <Users />
-      </div>
-      <div class="flex-1">
-        <Products />
-      </div>
-    </div>
+    <meu-componente />
   </container>
 </template>

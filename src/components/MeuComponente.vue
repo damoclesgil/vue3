@@ -1,24 +1,22 @@
-<template>
-  <container>
-    {{ users }}
-  </container>
-</template>
-
 <script>
-import Container from "../layout/Container";
-import { useUsers } from "@/use/useUsers.js";
+import { useContasBancarias } from "@/composables/useUsers.js";
+
 export default {
   name: "Componente",
-  components: {
-    Container
-  },
   setup() {
-    const { users } = useUsers();
 
-    return { users };
+    const { contas } = useContasBancarias();
+
+    return { contas };
   }
 };
 </script>
+
+<template>
+<div>
+    {{ contas }}
+</div>
+</template>
 
 <style>
 .eoq {
