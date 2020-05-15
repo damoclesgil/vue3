@@ -1,5 +1,5 @@
 <script>
-import { useContasBancarias } from "@/composables/useUsers.js";
+import { useContasBancarias } from "@/composables/useContasBancarias.js";
 
 export default {
   name: "Componente",
@@ -7,7 +7,11 @@ export default {
 
     const { contas } = useContasBancarias();
 
-    return { contas };
+    const eoq = () => {
+      console.log('pravo')
+    }
+
+    return { contas, eoq };
   }
 };
 </script>

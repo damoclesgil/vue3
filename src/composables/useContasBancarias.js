@@ -6,3 +6,17 @@ export const useContasBancarias = () => {
 
   return { contas };
 };
+
+/** How to Use **
+
+import { useUsers } from "@/composables/useUsers.js";
+export default {
+  name: "Componente",
+  setup() {
+   const { contas } = useContasBancarias();
+
+    return { contas, eoq };
+  }
+}
+
+*/

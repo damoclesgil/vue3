@@ -1,5 +1,5 @@
 {
-  "name": "learning-vue3",
+  "name": "editrning-vue3",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -12,12 +12,12 @@
     "vue": "^3.0.0-beta.12"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.3.1",
-    "@vue/cli-plugin-eslint": "~4.3.1",
-    "@vue/cli-service": "~4.3.1",
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-plugin-eslint": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
     "@vue/compiler-sfc": "^3.0.0-beta.12",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "vue-cli-plugin-tailwind": "^1.4.0",
     "vue-cli-plugin-vue-next": "^0.1.2",
