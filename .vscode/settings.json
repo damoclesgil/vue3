@@ -1,5 +1,16 @@
 {
+    "typescript.tsdk": "node_modules/typescript/lib",
     "eslint.format.enable": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
+    // Use prettier to format typescript, javascript and JSON files
+    "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

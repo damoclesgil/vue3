@@ -1,8 +1,8 @@
 <script>
-import { useUsers } from "@/composables/useUsers.js";
-import { ref } from "vue";
+import { useUsers } from "@/composables/useUsers";
+import { defineComponent, ref } from "vue";
 
-export default {
+export default defineComponent({
   name: "Componente",
   data() {
     return {
@@ -10,19 +10,19 @@ export default {
     };
   },
   setup() {
-    const variavel = ref('texto')
+    const variavel = ref("texto");
 
-    const { users } = useUsers()
+    const { users } = useUsers();
 
     return { variavel, users };
-  },
-}
+  }
+})
 </script>
 
 <template>
   <div>
     {{ variavel }}
-  {{ users }}
+    {{ users }}
   </div>
 </template>
 

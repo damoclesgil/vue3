@@ -4,5 +4,9 @@
   "recommendations": [
       // Debugger for Chrome
     "msjsdiag.debugger-for-chrome",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "octref.vetur",
+    "wscats.vue"
   ]
 }
