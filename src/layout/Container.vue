@@ -5,3 +5,19 @@
     </div>
   </div>
 </template>
+<script>
+import {provide} from 'vue'
+
+export default {
+  setup(){
+    provide(makeSomething)
+
+  function makeSomething(){
+    alert('eoqueijo')
+  }
+
+    return { makeSomething }
+  }
+  
+}
+</script>

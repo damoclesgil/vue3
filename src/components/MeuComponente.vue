@@ -1,25 +1,29 @@
 <script>
-import { useContasBancarias } from "@/composables/useContasBancarias.js";
+import { useUsers } from "@/composables/useUsers.js";
+import { ref } from "vue";
 
 export default {
   name: "Componente",
+  data() {
+    return {
+      test: ""
+    };
+  },
   setup() {
+    const variavel = ref('texto')
 
-    const { contas } = useContasBancarias();
+    const { users } = useUsers()
 
-    const eoq = () => {
-      console.log('pravo')
-    }
-
-    return { contas, eoq };
-  }
-};
+    return { variavel, users };
+  },
+}
 </script>
 
 <template>
-<div>
-    {{ contas }}
-</div>
+  <div>
+    {{ variavel }}
+  {{ users }}
+  </div>
 </template>
 
 <style>
