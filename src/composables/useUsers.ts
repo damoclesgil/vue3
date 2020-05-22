@@ -12,7 +12,14 @@ export const useUsers = () => {
     },
   ]);
 
+  function eoqueijo() {
+    window.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
+  }
+
   return {
     users,
+    eoqueijo,
   };
 };

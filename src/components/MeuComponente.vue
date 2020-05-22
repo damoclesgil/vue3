@@ -10,7 +10,7 @@ export default defineComponent({
     };
   },
   setup() {
-    const variavel = ref("texto");
+    const variavel = ref("");
 
     const { users } = useUsers();
 
