@@ -1,18 +1,19 @@
 <script lang="ts">
-import { defineComponent} from 'vue'
+import { defineComponent } from "vue";
 import Container from "@/layout/Container";
-import MeuComponente from "@/components/MeuComponente";
+import Navigation from "@/layout/Navigation";
 
 export default defineComponent({
   components: {
     Container,
-    MeuComponente,
-  }
-})
+    Navigation,
+  },
+});
 </script>
 
 <template>
   <container>
-    <meu-componente />
+    <navigation />
+    <router-view />
   </container>
 </template>

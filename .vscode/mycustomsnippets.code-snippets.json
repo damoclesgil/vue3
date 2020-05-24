@@ -1,0 +1,7 @@
+{
+  "Typescript Ignore": {
+    "prefix": "tsignore",
+    "body": "// @ts-ignore",
+    "description": "Ignore Typescript Lint Error"
+  }
+}

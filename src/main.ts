@@ -1,5 +1,10 @@
 import { createApp } from "vue";
+import router from "./router";
+import { globalState } from "./store";
 import App from "./App.vue";
 import "./assets/tailwind.css";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+app.provide("state", globalState);
+app.use(router);
+app.mount("#app");
