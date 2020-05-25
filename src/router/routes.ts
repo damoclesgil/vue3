@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw } from "vue-router";
+
 // import Home from "@/views/Home.vue";
 const Home = () => import("@/views/Home.vue");
 
@@ -9,7 +10,7 @@ const About = () => {
 // import Blog from "@/views/Blog.vue";
 const Blog = () => import("@/views/Blog.vue");
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "home",
@@ -26,11 +27,3 @@ const routes: Array<RouteRecordRaw> = [
     component: Blog,
   },
 ];
-
-const router = createRouter({
-  history: createWebHistory(),
-  strict: true,
-  routes,
-});
-
-export default router;
