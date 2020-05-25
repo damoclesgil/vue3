@@ -1,7 +1,15 @@
 {
-  "Typescript Ignore": {
+  "TypescriptIgnore": {
+    "scope": "ts",
     "prefix": "tsignore",
-    "body": "// @ts-ignore",
+    "body": ["// @ts-ignore"],
     "description": "Ignore Typescript Lint Error"
+  },
+  "classes": {
+    "prefix": "classes",
+    "body": [
+      ":classes=\"{ root: 'root-class', trigger: 'trigger-class', content: 'content-class'}\""
+    ],
+    "description": "classes"
   }
 }

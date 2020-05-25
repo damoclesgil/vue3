@@ -1,7 +1,8 @@
 <template>
   <ul class="flex items-center justify-center">
     <li class="mr-4"><router-link :to="{ name: 'home' }">Home</router-link></li>
-    <li><router-link to="about">About</router-link></li>
+    <li class="mr-4"><router-link to="about">About</router-link></li>
+    <li><router-link to="blog">Blog</router-link></li>
   </ul>
 </template>
 <script>

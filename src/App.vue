@@ -14,6 +14,8 @@ export default defineComponent({
 <template>
   <container>
     <navigation />
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </container>
 </template>

@@ -1,5 +1,8 @@
 import { reactive } from "vue";
 
 export const globalState = reactive({
-  cancelNextNavigation: false,
+  currentUser: {
+    id: "123",
+    name: "Son Goku",
+  },
 });
