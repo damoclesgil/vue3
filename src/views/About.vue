@@ -16,6 +16,5 @@ export default defineComponent({
 </script>
 <template>
   <h1>About Page</h1>
-  <input class="input" />
-  <meu-componente class="hidden" />
+  <meu-componente />
 </template>

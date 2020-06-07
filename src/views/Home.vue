@@ -5,6 +5,7 @@ import {
   getCurrentInstance,
   inject,
   onMounted,
+  ref,
 } from "vue";
 import BaseInput from "@/components/BaseInput";
 export default defineComponent({
@@ -13,6 +14,7 @@ export default defineComponent({
     BaseInput,
   },
   setup() {
+    const toggle = ref<boolean>(true);
     const me = getCurrentInstance();
 
     const store = inject("state");
@@ -26,17 +28,12 @@ export default defineComponent({
       console.log("Homepage");
     });
 
-    return { me, form, store };
+    return { me, form, store, toggle };
   },
 });
 </script>
 <template>
   <section class="mt-3 max-w-2xl m-auto">
-    <input class="input" v-model="form.firstName" />
-    <div class="flex">
-      <label for="safe">Safe Or No Safe?</label>
-      <input type="checkbox" id="safe" v-model="form.safe" />
-    </div>
-    <base-input v-model="form.lastName" class="hidden" />
+    <base-input v-model="form.lastName" placeholder="Input" />
   </section>
 </template>
