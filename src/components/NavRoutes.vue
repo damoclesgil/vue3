@@ -1,6 +1,6 @@
 <script>
 /* eslint-disable */
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watch, computed } from "vue";
 export default defineComponent({
   setup() {
     const navRoutes = ref([
@@ -9,23 +9,14 @@ export default defineComponent({
         children: [
           {
             name: "Locais",
-            parent: [
+            children: [
               {
-                name: "Estrutura",
+                name: "Jhonson",
               },
               {
-                name: "Lotações",
-              },
-              {
-                name: "Rubricas",
+                name: "James",
               },
             ],
-          },
-          {
-            name: "Lotações",
-          },
-          {
-            name: "Rubricas",
           },
           {
             name: "Calendário",
@@ -38,57 +29,53 @@ export default defineComponent({
       },
     ]);
 
-    // const getRoutes = computed(() => { return navRoutes })
+    const backRoutes = ref([]);
 
-    // const getRoutes = computed({
-    //   get: () => {
-    //     return navRoutes.value;
-    //   },
-    //   set: (newRoutes) => {
-    //     return newRoutes;
-    //   },
-    // });
-
-    // watchEffect(getRoutes, () => {
-    //   console.log("eEAE");
-    // });
-
-    /*
-    const main = {
-      name: "main object",
-      child: {
-        name: "child object",
-      },
-      init: function() {
-        this.child.parent = this;
-        delete this.init;
-        return this;
-      },
-    }.init();
-
-    console.log(main.child.parent.name);
-*/
     const setChildrens = (routes) => {
       navRoutes.value = routes;
     };
-    const setParents = (routes) => {
-      console.info("set");
-      navRoutes.value = routes;
+    const setParents = () => {
+      navRoutes.value = backRoutes.value;
     };
 
-    // ...toRefs(navRoutes)
-    return { setChildrens, setParents, navRoutes };
+    function setParent(o) {
+      if (o.children != undefined) {
+        for (n in o.children) {
+          o.children[n].parent = o;
+          setParent(o.children[n]);
+        }
+      }
+    }
+
+    // onMounted(() => {
+    // console.log(setParent(navRoutes.value));
+    // let children2 = navRoutes.value.children["children2"];
+    // console.log(children2.parent.name);
+    // });
+
+    const getRoutes = computed(() => {
+      setParent(navRoutes.value);
+    });
+
+    watch(navRoutes, (newValue, oldValue) => {
+      backRoutes.value = oldValue;
+    });
+
+    return { setChildrens, setParents, setParent, navRoutes };
   },
 });
 </script>
 <template>
   <div v-for="(route, index) in navRoutes" :key="index">
-    <button class="btn" @click="setParents(route.parent)">
-      Voltar
+    <button class="btn">
+      Set Parent
     </button>
-    <button class="ml-2" @click="setChildrens(route.children)">
-      {{ route.name }}
+    <button class="btn -sm ml-2" @click="setChildrens(route.children)">
+      Set children
     </button>
+    <pre class="text-xs">
+    {{ route }}
+    </pre>
   </div>
 </template>
 
