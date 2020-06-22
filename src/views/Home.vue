@@ -1,15 +1,15 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import NavRoutes from "@/components/NavRoutes";
+import LogoAnimation from "@/components/LogoAnimation";
 export default defineComponent({
   name: "Home",
   components: {
-    NavRoutes,
+    LogoAnimation,
   },
 });
 </script>
 <template>
   <section class="mt-3 max-w-2xl m-auto">
-    <nav-routes />
+    <logo-animation />
   </section>
 </template>

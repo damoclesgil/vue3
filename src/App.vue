@@ -13,7 +13,7 @@ export default defineComponent({
 
 <template>
   <container>
-    <navigation />
+    <navigation class="block" />
     <router-view />
   </container>
 </template>
