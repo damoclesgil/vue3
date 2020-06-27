@@ -1,11 +1,11 @@
 <script lang="ts">
-import MeuComponente from "@/components/MeuComponente";
+import Testing from "@/components/Testing";
 import { defineComponent, onMounted } from "vue";
 
 export default defineComponent({
   name: "About",
   components: {
-    MeuComponente,
+    Testing,
     setup() {
       onMounted(() => {
         console.log("About Component");
@@ -16,5 +16,5 @@ export default defineComponent({
 </script>
 <template>
   <h1>About Page</h1>
-  <meu-componente />
+  <testing />
 </template>

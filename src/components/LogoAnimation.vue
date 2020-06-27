@@ -1,76 +1,15 @@
 <template>
-  <div class="flex items-center">
-    <div class="size mt-2 hidden">
-      <svg
-        fill="none"
-        viewBox="0 0 8 8"
-        class="w-full h-full animate__fadeInBottomLeft"
-      >
-        <path d="M7.025.953v7.006H0v-2.72h4.297V.952h2.728z" fill="#fff" />
-      </svg>
-    </div>
+  <div class="flex flex-col h-screen justify-center m-auto">
     <div class="logo-calculato ml-2 overflow-hidden">
-      <div
-        class="traco-top animate__animated a-delay-2 animate__repeat-2"
-      ></div>
-      <div
-        class="traco-bottom animate__animated a-delay-1 animate__repeat-2"
-      ></div>
-      <!--  
-                class="traco-bottom animate__animated animate__fadeInLeft a-delay-1 animate__repeat-2"
-      -->
-      <!-- animate__infinite animate__repeat-2 -->
+      <div class="traco-top animate__animated a-delay-2 animate__infinite"></div>
+      <div class="traco-bottom "></div>
+            <!-- animate__infinite animate__repeat-2 custom-animate -->
     </div>
 
-    <!-- <svg
-      class="hidden"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      style="margin: auto; display: block;"
-      width="200px"
-      height="200px"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="xMidYMid"
-    >
-      <rect
-        stroke="#5699d2"
-        x="20"
-        y="20"
-        width="60"
-        height="60"
-        stroke-width="20"
-        fill="none"
-      ></rect>
-      <rect
-        x="20"
-        y="20"
-        width="60"
-        height="60"
-        stroke="#1d3f72"
-        stroke-width="20"
-        stroke-lincap="undefined"
-        fill="none"
-      >
-        <animate
-          attributeName="stroke-dasharray"
-          repeatCount="indefinite"
-          dur="4s"
-          keyTimes="0;0.5;1"
-          values="24 216;120 120;24 216"
-        ></animate>
-        <animate
-          attributeName="stroke-dashoffset"
-          repeatCount="indefinite"
-          dur="4s"
-          keyTimes="0;0.5;1"
-          values="120;"
-        ></animate>
-      </rect>
-    </svg> -->
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import "animate.css";
 
@@ -84,8 +23,19 @@ export default defineComponent({
 <style>
 :root {
   --animate-duration: 2s;
+  --easeInOutQuint : cubic-bezier(0.860, 0.000, 0.070, 1.000);
   --animate-repeat: 2;
 }
+.custom-animate {
+    height: 40px;
+    background: #336699;
+    animation: animateTransform 2s alternate infinite var(--easeInOutQuint);
+}
+@keyframes animateTransform {
+  from { transform: translate(-75%); }
+  to { transform: none; }
+}
+
 .size {
   width: 150px;
   height: 150px;
@@ -123,6 +73,7 @@ export default defineComponent({
   transition-property: width;
   transition-timing-function: ease-in-out;
 }
+
 /*
 :root {
   --animate-duration: 1s;

@@ -3,7 +3,6 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const Home = () => import("@/views/Home.vue");
 
 const About = () => {
-  console.log("fetching component");
   return import("@/views/About.vue");
 };
 // import Blog from "@/views/Blog.vue";

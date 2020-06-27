@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, onMounted, ref,  watchEffect } from "vue";
 export default defineComponent({
   name: "Testing",
   data: () => ({
@@ -10,16 +10,29 @@ export default defineComponent({
       type: String,
       default: "12312",
     },
+    outraPropriedade: {
+      type: String,
+      default: 'Apenas una property'
+    }
   },
-  setup(_, { attrs }) {
+  setup(props, { attrs }) {
     const toogle = ref<Boolean>(false);
+    const $element = ref<HTMLDivElement>();
+
 
     onMounted(() => {
-      console.log(_.propriedade);
+      console.log(props.propriedade);
       console.log(attrs);
+
+      watchEffect([props.outraPropriedade, props.propriedade], ([foo, bar], [prevFoo, prevBar]) => {
+            console.log(foo)
+            console.log(bar)
+            console.log(prevBar)
+            console.log(prevFoo)
+      })
     });
 
-    return { toogle };
+    return { toogle, $element };
   },
 });
 </script>
