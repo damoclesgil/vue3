@@ -1,10 +1,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+// import Nome from '../components/Nome'
+
 export default defineComponent({
-  name: "Blog",
+  name: "Blog"
 });
 </script>
+
 <template>
-  <section>
-  </section>
+  <h1>Blog Page</h1>
+  <!-- <vuelidatezera/> -->
 </template>

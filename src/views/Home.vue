@@ -5,11 +5,11 @@ export default defineComponent({
   name: "Home",
   components: {
     LogoAnimation,
-  },
+  }
 });
 </script>
 <template>
-  <section class="mt-3 max-w-2xl m-auto">
+  <section>
     <logo-animation />
   </section>
 </template>

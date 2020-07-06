@@ -1,17 +1,19 @@
 <template>
   <div>
-    <base-input v-model="name" />
+    <base-input v-model="$v.name.$model" />
 
     <pre>
       {{ $v.name }}
+      </pre>
   </div>
 </template>
 
 <script>
-import { defineComponent, Vue } from "vue";
+import { defineComponent, App } from "vue";
 import { VuelidatePlugin } from "@vuelidate/core";
+import { required, minLength, between } from "@vuelidate/validators";
 import BaseInput from "./BaseInput";
-Vue.use(VuelidatePlugin);
+App.use(VuelidatePlugin);
 
 export default defineComponent({
   data() {

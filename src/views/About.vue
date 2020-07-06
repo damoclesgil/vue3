@@ -1,20 +1,16 @@
 <script lang="ts">
-import Testing from "@/components/Testing";
-import { defineComponent, onMounted } from "vue";
+import RenderFunction from "@/components/RenderFunction";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "About",
   components: {
-    Testing,
-    setup() {
-      onMounted(() => {
-        console.log("About Component");
-      });
-    },
+    RenderFunction,
   },
 });
 </script>
+
 <template>
   <h1>About Page</h1>
-  <testing />
+  <render-function :exibe="false"/>
 </template>

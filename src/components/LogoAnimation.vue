@@ -1,123 +1,83 @@
 <template>
-  <div class="flex flex-col h-screen justify-center m-auto">
-    <div class="logo-calculato ml-2 overflow-hidden">
-      <div class="traco-top animate__animated a-delay-2 animate__infinite"></div>
-      <div class="traco-bottom "></div>
-            <!-- animate__infinite animate__repeat-2 custom-animate -->
-    </div>
+  <div class="flex flex-col h-screen justify-center items-center m-auto overflow-hidden">
+  
 
+<div class="relative">
+<div class="loader-circle"></div>
+<div class="loader-line-mask">
+      <div class="loader-line"></div>
+</div>
+
+<svg  class="text-primary" width="40" height="40" viewBox="0 0 40 40">
+    <rect x="25" width="15" height="40" fill="currentColor">
+      <!-- <animate attributeName="opacity" dur="5s" values="0;1;0" repeatCount="indefinite" begin="0.2"></animate> -->
+    </rect>
+    <rect y="25" width="30" height="15" fill="currentColor">
+      <!-- <animate attributeName="opacity" dur="5s" values="0;1;0" repeatCount="indefinite" begin="0.1"></animate> -->
+    </rect>
+</svg> 
+
+
+</div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import "animate.css";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "LogoAnimation",
   setup() {
-    return {};
+    const duration = ref<String>('5s')
+    const $path = ref<HTMLDocument>()
+
+    function getLengthPath(){
+      let tam = $path.value.getTotalLength()
+      console.log(tam)
+    }
+   
+
+    return { $path, duration, getLengthPath };
   },
 });
 </script>
 <style>
-:root {
-  --animate-duration: 2s;
-  --easeInOutQuint : cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  --animate-repeat: 2;
+.text-primary{
+  color: #005CFF;
 }
-.custom-animate {
-    height: 40px;
-    background: #336699;
-    animation: animateTransform 2s alternate infinite var(--easeInOutQuint);
-}
-@keyframes animateTransform {
-  from { transform: translate(-75%); }
-  to { transform: none; }
-}
-
-.size {
-  width: 150px;
-  height: 150px;
-}
-.logo-calculato {
-  width: 150px;
-  height: 150px;
-  position: relative;
-}
-.logo-calculato .traco-top {
+.loader-circle {
   position: absolute;
-  width: 50px;
-  height: 150px;
-  right: 0;
-  top: 0;
-  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 92, 255, 0.1);
+  margin-left: -45px;
+  margin-top: -45px;
 }
-.logo-calculato .traco-bottom {
+.loader-line-mask {
   position: absolute;
-  width: 150px;
-  height: 50px;
-  left: 0;
-  background-color: #fff;
-  bottom: 0;
+  left: 50%;
+  top: 50%;
+  width: 45px;
+  height: 60px;
+  margin-left: -45px;
+  margin-top: -45px;
+  overflow: hidden;
+  transform-origin: 45px 45px;
+  animation: rotate 8s infinite linear;
 }
-.a-delay-1 {
-  animation-delay: 500ms;
-  animation-duration: 3s;
-  transition-property: width;
-  transition-timing-function: ease-in-out;
+.loader-line-mask .loader-line {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 92, 255, 0.5);
 }
-.a-delay-2 {
-  animation-delay: 1s;
-  animation-duration: 3s;
-  transition-property: width;
-  transition-timing-function: ease-in-out;
-}
+@keyframes rotate{ 0% {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);} 100% {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg);}}
 
-/*
-:root {
-  --animate-duration: 1s;
-  --animate-delay: 1s;
-  --animate-repeat: 1;
-}
-.animate__repeat-2 {
-  -webkit-animation-iteration-count: calc(1 * 2);
-  animation-iteration-count: calc(1 * 2);
-  -webkit-animation-iteration-count: calc(var(--animate-repeat) * 2);
-  animation-iteration-count: calc(var(--animate-repeat) * 2);
-}
-@-webkit-keyframes fadeInBottomLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 100%, 0);
-    transform: translate3d(-100%, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes fadeInBottomLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 100%, 0);
-    transform: translate3d(-100%, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-.animate__fadeInBottomLeft {
-  -webkit-animation-name: fadeInBottomLeft;
-  animation-name: fadeInBottomLeft;
-}
-.animate_animated {
-  animation-duration: 2s;
-}
-*/
-
-/* animation-iteration-count: infinite; */
 </style>
+
+<!-- watchEffect(() => {
+      refetch({ id: idRoute.value })
+})-->
