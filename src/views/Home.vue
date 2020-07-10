@@ -1,15 +1,15 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import LogoAnimation from "@/components/LogoAnimation";
+import InputFocus from "@/components/InputFocus";
 export default defineComponent({
   name: "Home",
   components: {
-    LogoAnimation,
+    InputFocus,
   }
 });
 </script>
 <template>
   <section>
-    <logo-animation />
+    <input-focus />
   </section>
 </template>
