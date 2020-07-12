@@ -22,6 +22,8 @@
     "vuetensils": "^0.7.1"
   },
   "devDependencies": {
+    "@ant-design-vue/babel-helper-vue-transform-on": "^1.0.1",
+    "@ant-design-vue/babel-plugin-jsx": "^1.0.0-alpha.6",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "@typescript-eslint/parser": "^3.4.0",
     "@vue/cli-plugin-babel": "^4.4.6",
