@@ -8,6 +8,7 @@ export default defineComponent({
 <template>
   <input class="input" />
 </template>
+
 <style lang="postcss">
 .input {
   @apply bg-white border text-black border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal;
