@@ -15,5 +15,6 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "vetur.experimental.templateInterpolationService": true
 }
