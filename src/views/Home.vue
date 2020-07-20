@@ -1,15 +1,15 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import InputFocus from "@/components/InputFocus";
+import PlayGround from '../components/PlayGround.vue'
 export default defineComponent({
   name: "Home",
   components: {
-    InputFocus,
+    PlayGround
   }
 });
 </script>
 <template>
   <section>
-    <input-focus />
+    <play-ground/>
   </section>
 </template>
