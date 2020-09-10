@@ -3,6 +3,8 @@
 # Learning Vue 3 Features
 
 ```bash
+## install  vue-cli 3
+yarn global add @vue/cli@next
 ## add vue 3
 vue add vue-next
 ```
