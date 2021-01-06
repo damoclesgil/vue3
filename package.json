@@ -10,7 +10,7 @@
   "dependencies": {
     "@vuelidate/core": "^2.0.0-alpha.1",
     "animate.css": "^4.1.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cep-promise": "^4.0.0",
     "core-js": "^3.6.5",
     "tailwindcss": "^1.6.2",
